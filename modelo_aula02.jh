@@ -1,0 +1,42 @@
+entity Vacina {
+	nome String
+    criada ZonedDateTime
+}
+
+entity Pais {
+	nome String
+    sigla String
+}
+
+entity Fabricante {
+	nome String
+    criado ZonedDateTime
+}
+
+entity Doenca {
+	nome String
+    criado ZonedDateTime
+    dataPrimeiroCaso LocalDate
+    localPrimeiroCaso LocalDate
+}
+
+entity VacinacaoPessoa {
+	// quem é a pessoa
+    // qual vacina tomou
+    quando LocalDate
+    cns String
+}
+
+entity Pessoa {
+	nome String
+    dataNascimento LocalDate
+}
+
+relationship ManyToOne {
+	//um lado é o ONE o outro é p MANY
+	VacinacaoPessoa{pessoa(nome)} to Pessoa
+    VacinacaoPessoa{vacina(nome)} to Vacina
+    VacinacaoPessoa{vacina(nome)} to Fabricante
+    Vacina{doenca(nome)} to Doenca
+	Fabricante{pais(nome)} to Pais
+}
