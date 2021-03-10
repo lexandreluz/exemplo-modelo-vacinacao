@@ -1,0 +1,47 @@
+{
+  "name": "VacinacaoPessoa",
+  "fields": [
+    {
+      "fieldName": "quando",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "cns",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pessoa",
+      "otherEntityRelationshipName": "vacinacaoPessoa",
+      "relationshipName": "pessoa",
+      "otherEntityField": "nome"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "vacina",
+      "otherEntityRelationshipName": "vacinacaoPessoa",
+      "relationshipName": "vacina",
+      "otherEntityField": "nome"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fabricante",
+      "otherEntityRelationshipName": "vacinacaoPessoa",
+      "relationshipName": "vacina",
+      "otherEntityField": "nome"
+    }
+  ],
+  "changelogDate": "20210310135319",
+  "entityTableName": "vacinacao_pessoa",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

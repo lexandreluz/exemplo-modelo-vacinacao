@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="exemploVacinacaoApp.fabricante.home.title">Fabricantes</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-fabricante" [routerLink]="['/fabricante/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="exemploVacinacaoApp.fabricante.home.createLabel">
+            Create a new Fabricante
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="fabricantes?.length === 0">
+        <span jhiTranslate="exemploVacinacaoApp.fabricante.home.notFound">No fabricantes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="fabricantes && fabricantes.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="exemploVacinacaoApp.fabricante.nome">Nome</span></th>
+                    <th scope="col" ><span jhiTranslate="exemploVacinacaoApp.fabricante.criado">Criado</span></th>
+                    <th scope="col" ><span jhiTranslate="exemploVacinacaoApp.fabricante.pais">Pais</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fabricante of fabricantes ;trackBy: trackId">
+                    <td><a [routerLink]="['/fabricante', fabricante.id, 'view']">{{ fabricante.id }}</a></td>
+                    <td>{{ fabricante.nome }}</td>
+                    <td>{{ fabricante.criado | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="fabricante.pais">
+                            <a [routerLink]="['/pais', fabricante.pais?.id, 'view']" >{{ fabricante.pais?.nome }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/fabricante', fabricante.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/fabricante', fabricante.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(fabricante)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

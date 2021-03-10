@@ -1,0 +1,26 @@
+{
+  "exemploVacinacaoApp": {
+    "vacinacaoPessoa": {
+      "home": {
+        "title": "Vacinacao Pessoas",
+        "createLabel": "Criar novo Vacinacao Pessoa",
+        "createOrEditLabel": "Criar ou editar Vacinacao Pessoa",
+        "notFound": "Nenhum Vacinacao Pessoa encontrado"
+      },
+      "created": "Um novo Vacinacao Pessoa foi criado com o identificador {{ param }}",
+      "updated": "Um Vacinacao Pessoa foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Vacinacao Pessoa foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Vacinacao Pessoa {{ id }}?"
+      },
+      "detail": {
+        "title": "Vacinacao Pessoa"
+      },
+      "quando": "Quando",
+      "cns": "Cns",
+      "pessoa": "Pessoa",
+      "vacina": "Vacina",
+      "vacina": "Vacina"
+    }
+  }
+}

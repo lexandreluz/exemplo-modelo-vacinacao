@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-vacinacao-pessoa-heading" jhiTranslate="exemploVacinacaoApp.vacinacaoPessoa.home.createOrEditLabel">Create or edit a Vacinacao Pessoa</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="exemploVacinacaoApp.vacinacaoPessoa.quando" for="field_quando">Quando</label>
+                    <div class="input-group">
+                        <input id="field_quando" type="text" class="form-control" name="quando" ngbDatepicker #quandoDp="ngbDatepicker" formControlName="quando"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="quandoDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="exemploVacinacaoApp.vacinacaoPessoa.cns" for="field_cns">Cns</label>
+                    <input type="text" class="form-control" name="cns" id="field_cns"
+                           formControlName="cns"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="exemploVacinacaoApp.vacinacaoPessoa.pessoa" for="field_pessoa">Pessoa</label>
+                    <select class="form-control" id="field_pessoa" name="pessoa" formControlName="pessoa">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="pessoaOption.id === editForm.get('pessoa')!.value?.id ? editForm.get('pessoa')!.value : pessoaOption" *ngFor="let pessoaOption of pessoas; trackBy: trackById">{{ pessoaOption.nome }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="exemploVacinacaoApp.vacinacaoPessoa.vacina" for="field_vacina">Vacina</label>
+                    <select class="form-control" id="field_vacina" name="vacina" formControlName="vacina">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="vacinaOption.id === editForm.get('vacina')!.value?.id ? editForm.get('vacina')!.value : vacinaOption" *ngFor="let vacinaOption of vacinas; trackBy: trackById">{{ vacinaOption.nome }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="exemploVacinacaoApp.vacinacaoPessoa.vacina" for="field_vacina">Vacina</label>
+                    <select class="form-control" id="field_vacina" name="vacina" formControlName="vacina">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="fabricanteOption.id === editForm.get('vacina')!.value?.id ? editForm.get('vacina')!.value : fabricanteOption" *ngFor="let fabricanteOption of fabricantes; trackBy: trackById">{{ fabricanteOption.nome }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
