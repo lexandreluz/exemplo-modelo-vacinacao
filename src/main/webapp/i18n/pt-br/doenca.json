@@ -1,0 +1,25 @@
+{
+  "exemploVacinacaoApp": {
+    "doenca": {
+      "home": {
+        "title": "Doencas",
+        "createLabel": "Criar novo Doenca",
+        "createOrEditLabel": "Criar ou editar Doenca",
+        "notFound": "Nenhum Doenca encontrado"
+      },
+      "created": "Um novo Doenca foi criado com o identificador {{ param }}",
+      "updated": "Um Doenca foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Doenca foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Doenca {{ id }}?"
+      },
+      "detail": {
+        "title": "Doenca"
+      },
+      "nome": "Nome",
+      "criado": "Criado",
+      "dataPrimeiroCaso": "Data Primeiro Caso",
+      "localPrimeiroCaso": "Local Primeiro Caso"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="doenca">
+            <h2><span jhiTranslate="exemploVacinacaoApp.doenca.detail.title">Doenca</span> {{ doenca.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="exemploVacinacaoApp.doenca.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ doenca.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="exemploVacinacaoApp.doenca.criado">Criado</span></dt>
+                <dd>
+                    <span>{{ doenca.criado }}</span>
+                </dd>
+                <dt><span jhiTranslate="exemploVacinacaoApp.doenca.dataPrimeiroCaso">Data Primeiro Caso</span></dt>
+                <dd>
+                    <span>{{ doenca.dataPrimeiroCaso }}</span>
+                </dd>
+                <dt><span jhiTranslate="exemploVacinacaoApp.doenca.localPrimeiroCaso">Local Primeiro Caso</span></dt>
+                <dd>
+                    <span>{{ doenca.localPrimeiroCaso }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/doenca', doenca.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

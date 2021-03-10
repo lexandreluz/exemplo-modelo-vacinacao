@@ -1,0 +1,24 @@
+{
+  "exemploVacinacaoApp": {
+    "vacina": {
+      "home": {
+        "title": "Vacinas",
+        "createLabel": "Create a new Vacina",
+        "createOrEditLabel": "Create or edit a Vacina",
+        "notFound": "No Vacinas found"
+      },
+      "created": "A new Vacina is created with identifier {{ param }}",
+      "updated": "A Vacina is updated with identifier {{ param }}",
+      "deleted": "A Vacina is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Vacina {{ id }}?"
+      },
+      "detail": {
+        "title": "Vacina"
+      },
+      "nome": "Nome",
+      "criada": "Criada",
+      "doenca": "Doenca"
+    }
+  }
+}

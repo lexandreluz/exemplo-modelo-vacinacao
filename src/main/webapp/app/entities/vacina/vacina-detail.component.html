@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="vacina">
+            <h2><span jhiTranslate="exemploVacinacaoApp.vacina.detail.title">Vacina</span> {{ vacina.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="exemploVacinacaoApp.vacina.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ vacina.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="exemploVacinacaoApp.vacina.criada">Criada</span></dt>
+                <dd>
+                    <span>{{ vacina.criada }}</span>
+                </dd>
+                <dt><span jhiTranslate="exemploVacinacaoApp.vacina.doenca">Doenca</span></dt>
+                <dd>
+                    <div *ngIf="vacina.doenca">
+                        <a [routerLink]="['/doenca', vacina.doenca?.id, 'view']">{{ vacina.doenca?.nome }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/vacina', vacina.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+{
+  "name": "Vacina",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "criada",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "doenca",
+      "otherEntityRelationshipName": "vacina",
+      "relationshipName": "doenca",
+      "otherEntityField": "nome"
+    }
+  ],
+  "changelogDate": "20210310134919",
+  "entityTableName": "vacina",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

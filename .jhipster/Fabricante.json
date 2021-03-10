@@ -1,0 +1,33 @@
+{
+  "name": "Fabricante",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "criado",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pais",
+      "otherEntityRelationshipName": "fabricante",
+      "relationshipName": "pais",
+      "otherEntityField": "nome"
+    }
+  ],
+  "changelogDate": "20210310135119",
+  "entityTableName": "fabricante",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
